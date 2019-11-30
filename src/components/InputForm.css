@@ -1,0 +1,9 @@
+.inputForm {
+    float: left;
+    width: 600px;
+    font-size: 14px;
+}
+
+.numericLabel {
+    margin-top: -7px;
+}
