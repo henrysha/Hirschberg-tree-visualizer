@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Row, Col } from 'react-bootstrap';
 import NumericInput from 'react-numeric-input';
+import './InputForm.css';
 
 class InputForm extends Component {
 	constructor(props) {
@@ -27,37 +28,47 @@ class InputForm extends Component {
 	handleScoreChange(keyValueObj) {
 		console.log('handleScroeChange: ', keyValueObj);
 		this.setState(keyValueObj);
-	} 
+	}
 
 	handleSubmit(e) {
 		console.log('handleSubmit event: ', e);
 		e.preventDefault();
 		this.props.submitInput(this.state);
 	}
-
+ 
 	render() {
 		return (
-			<div>
+			<div className='inputForm'>
 				<Form onSubmit={this.handleSubmit}>
-					<Form.Group controlId="sequence1">
-						<Form.Label>Sequence 1</Form.Label>
-						<Form.Control onChange={this.handleChange} />
+					<Form.Group as={Row} controlId="sequence1">
+						<Form.Label column sm={3}>Sequence 1</Form.Label>
+						<Col sm={9}>
+							<Form.Control size='sm' onChange={this.handleChange} />
+						</Col>
 					</Form.Group>
-					<Form.Group controlId="sequence2">
-						<Form.Label>Sequence 2</Form.Label>
-						<Form.Control onChange={this.handleChange} />
+					<Form.Group as={Row} controlId="sequence2">
+						<Form.Label column sm={3}>Sequence 2</Form.Label>
+						<Col sm={9}>
+							<Form.Control size='sm' onChange={this.handleChange} />
+						</Col>
 					</Form.Group>
-					<Form.Group controlId="matchScore">
-						<Form.Label>Match Score</Form.Label>
-						<NumericInput value={this.state.matchScore} onChange={(value) => this.handleScoreChange({matchScore: value})}/>
+					<Form.Group as={Row} controlId="matchScore">
+						<Form.Label className='numericLabel' column sm={3}>Match Score</Form.Label>
+						<Col sm={4}>
+							<NumericInput value={this.state.matchScore} onChange={(value) => this.handleScoreChange({ matchScore: value })} />
+						</Col>
+					</Form.Group> 
+					<Form.Group as={Row} controlId="mismatchScore">
+						<Form.Label className='numericLabel' column sm={3}>Mismatch Score</Form.Label>
+						<Col sm={4}>
+							<NumericInput value={this.state.mismatchScore} onChange={(value) => this.handleScoreChange({ mismatchScore: value })} />
+						</Col>
 					</Form.Group>
-					<Form.Group controlId="mismatchScore">
-						<Form.Label>Mismatch Score</Form.Label>
-						<NumericInput value={this.state.mismatchScore} onChange={(value) => this.handleScoreChange({mismatchScore: value})}/>
-					</Form.Group>
-					<Form.Group controlId="gapScore">
-						<Form.Label>Gap Score</Form.Label>
-						<NumericInput value={this.state.gapScore} onChange={(value) => this.handleScoreChange({gapScore: value})}/>
+					<Form.Group as={Row} controlId="gapScore">
+						<Form.Label className='numericLabel' column sm={3}>Gap Score</Form.Label>
+						<Col sm={4}>
+							<NumericInput value={this.state.gapScore} onChange={(value) => this.handleScoreChange({ gapScore: value })} />
+						</Col>
 					</Form.Group>
 					<Button variant="primary" type="submit">
 						Submit
