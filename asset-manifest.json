@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Hirschberg-tree-visualizer/static/css/main.1fcb9ac3.chunk.css",
+    "main.js": "/Hirschberg-tree-visualizer/static/js/main.0e02c508.chunk.js",
+    "main.js.map": "/Hirschberg-tree-visualizer/static/js/main.0e02c508.chunk.js.map",
+    "runtime-main.js": "/Hirschberg-tree-visualizer/static/js/runtime-main.5adaa362.js",
+    "runtime-main.js.map": "/Hirschberg-tree-visualizer/static/js/runtime-main.5adaa362.js.map",
+    "static/css/2.86aa6515.chunk.css": "/Hirschberg-tree-visualizer/static/css/2.86aa6515.chunk.css",
+    "static/js/2.1d95702b.chunk.js": "/Hirschberg-tree-visualizer/static/js/2.1d95702b.chunk.js",
+    "static/js/2.1d95702b.chunk.js.map": "/Hirschberg-tree-visualizer/static/js/2.1d95702b.chunk.js.map",
+    "index.html": "/Hirschberg-tree-visualizer/index.html",
+    "precache-manifest.88af34a85186cbebb261d1d0d10c6459.js": "/Hirschberg-tree-visualizer/precache-manifest.88af34a85186cbebb261d1d0d10c6459.js",
+    "service-worker.js": "/Hirschberg-tree-visualizer/service-worker.js",
+    "static/css/2.86aa6515.chunk.css.map": "/Hirschberg-tree-visualizer/static/css/2.86aa6515.chunk.css.map",
+    "static/css/main.1fcb9ac3.chunk.css.map": "/Hirschberg-tree-visualizer/static/css/main.1fcb9ac3.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5adaa362.js",
+    "static/css/2.86aa6515.chunk.css",
+    "static/js/2.1d95702b.chunk.js",
+    "static/css/main.1fcb9ac3.chunk.css",
+    "static/js/main.0e02c508.chunk.js"
+  ]
+}
