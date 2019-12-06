@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import InputForm from './InputForm';
+import RecursionTree from "./Tree";
 
 class Main extends Component {
 	constructor(props) {
@@ -19,16 +20,21 @@ class Main extends Component {
         inputObj['displayResult'] = true;
         console.log('submitInput inputObj: ', inputObj);
         this.setState(inputObj);
-    }
+		}
+
+		let tree=null;
+		if (this.state.displayResult){
+			tree = <RecursionTree data={this.state.treeData} />
+		}
 
 	render() {
         console.log('state in main: ', this.state);
         console.log('displayResult: ', this.state.displayResult);
-        const text = this.state.displayResult ? 'output here' : null
+        // const text = this.state.displayResult ? 'output here' : null
 		return (
 			<div>
 				<InputForm submitInput={this.submitInput}/>
-                {text}
+				{tree}
 			</div>
 		);
 	}
