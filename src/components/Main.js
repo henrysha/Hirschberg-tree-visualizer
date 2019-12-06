@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import InputForm from './InputForm';
+import { h } from '../Hirschberg';
 
 class Main extends Component {
 	constructor(props) {
@@ -10,15 +11,19 @@ class Main extends Component {
 			matchScore: 0,
 			mismatchScore: 0,
             gapScore: 0,
-            displayResult: false,
+			displayResult: false,
 		};
 		this.submitInput = this.submitInput.bind(this);
 	}
 
     submitInput(inputObj) {
         inputObj['displayResult'] = true;
-        console.log('submitInput inputObj: ', inputObj);
-        this.setState(inputObj);
+		console.log('submitInput inputObj: ', inputObj);
+		
+		var hResult = h(inputObj.sequence1, inputObj.sequence2);
+		console.log('hResult: ', hResult);
+		this.setState(inputObj);
+		
     }
 
 	render() {
