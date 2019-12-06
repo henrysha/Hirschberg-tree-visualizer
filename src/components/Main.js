@@ -22,7 +22,7 @@ class Main extends Component {
         this.setState(inputObj);
 		}
 
-		let tree=null;
+		tree=null;
 		if (this.state.displayResult){
 			tree = <RecursionTree data={this.state.treeData} />
 		}
