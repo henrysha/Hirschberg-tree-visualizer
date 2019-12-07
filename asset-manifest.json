@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Hirschberg-tree-visualizer/static/css/main.ae365b81.chunk.css",
-    "main.js": "/Hirschberg-tree-visualizer/static/js/main.b7524ce4.chunk.js",
-    "main.js.map": "/Hirschberg-tree-visualizer/static/js/main.b7524ce4.chunk.js.map",
+    "main.js": "/Hirschberg-tree-visualizer/static/js/main.f4da81d4.chunk.js",
+    "main.js.map": "/Hirschberg-tree-visualizer/static/js/main.f4da81d4.chunk.js.map",
     "runtime-main.js": "/Hirschberg-tree-visualizer/static/js/runtime-main.5adaa362.js",
     "runtime-main.js.map": "/Hirschberg-tree-visualizer/static/js/runtime-main.5adaa362.js.map",
     "static/css/2.86aa6515.chunk.css": "/Hirschberg-tree-visualizer/static/css/2.86aa6515.chunk.css",
     "static/js/2.badaa146.chunk.js": "/Hirschberg-tree-visualizer/static/js/2.badaa146.chunk.js",
     "static/js/2.badaa146.chunk.js.map": "/Hirschberg-tree-visualizer/static/js/2.badaa146.chunk.js.map",
     "index.html": "/Hirschberg-tree-visualizer/index.html",
-    "precache-manifest.3a68a401503420a1f77e44618c8738b3.js": "/Hirschberg-tree-visualizer/precache-manifest.3a68a401503420a1f77e44618c8738b3.js",
+    "precache-manifest.37189ef436815245f7af4855680965a8.js": "/Hirschberg-tree-visualizer/precache-manifest.37189ef436815245f7af4855680965a8.js",
     "service-worker.js": "/Hirschberg-tree-visualizer/service-worker.js",
     "static/css/2.86aa6515.chunk.css.map": "/Hirschberg-tree-visualizer/static/css/2.86aa6515.chunk.css.map",
     "static/css/main.ae365b81.chunk.css.map": "/Hirschberg-tree-visualizer/static/css/main.ae365b81.chunk.css.map"
@@ -19,6 +19,6 @@
     "static/css/2.86aa6515.chunk.css",
     "static/js/2.badaa146.chunk.js",
     "static/css/main.ae365b81.chunk.css",
-    "static/js/main.b7524ce4.chunk.js"
+    "static/js/main.f4da81d4.chunk.js"
   ]
 }
