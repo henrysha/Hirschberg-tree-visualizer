@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Hirschberg-tree-visualizer/precache-manifest.37189ef436815245f7af4855680965a8.js"
+  "/Hirschberg-tree-visualizer/precache-manifest.e47666ee2260be6899c938b71dedfc48.js"
 );
 
 self.addEventListener('message', (event) => {
