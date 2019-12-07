@@ -2,10 +2,15 @@ import React from "react";
 import Tree from "react-d3-tree";
 import "./Tree.css";
 
+let initialPosition = { x: 512, y: 50 };
 function RecursionTree(props) {
   return (
-    <div class="TreeWrapper">
-      <Tree data={props.data} />
+    <div className="TreeWrapper">
+      <Tree
+        data={props.data}
+        orientation="vertical"
+        translate={initialPosition}
+      />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 .TreeWrapper {
-  width: 800px;
-  height: 600px;
+  float: left;
+  width: 1024px;
+  height: 768px;
 }
