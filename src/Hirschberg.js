@@ -339,7 +339,7 @@ function hirschberg(short, long, delta, indent_i, indent_j, level) {
   }
 }
 
-function h(short, long) {
+function h(short, long, match, mismatch, gap) {
   d = {};
   const keys = ["A", "C", "T", "G", "-"];
   var delta = {};
@@ -347,9 +347,11 @@ function h(short, long) {
     delta[keys[i]] = {};
     for (var j = 0; j < keys.length; j++) {
       if (keys[i] === keys[j]) {
-        delta[keys[i]][keys[j]] = 1;
+        delta[keys[i]][keys[j]] = match;
+      } else if (keys[j] == "-" || keys[i] == "-") {
+        delta[keys[i]][keys[j]] = gap;
       } else {
-        delta[keys[i]][keys[j]] = -1;
+        delta[keys[i]][keys[j]] = mismatch;
       }
     }
   }
