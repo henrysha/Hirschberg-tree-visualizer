@@ -24,7 +24,8 @@ class Main extends Component {
     inputObj["displayResult"] = true;
     console.log("submitInput inputObj: ", inputObj);
 
-    var hResult = h(inputObj.sequence1, inputObj.sequence2);
+    var hResult = h(inputObj.sequence1, inputObj.sequence2, 
+      inputObj.matchScore, inputObj.mismatchScore, inputObj.gapScore);
     console.log("hResult: ", hResult);
     this.setState(inputObj);
     this.setState({
