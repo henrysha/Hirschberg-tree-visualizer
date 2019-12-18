@@ -49,6 +49,7 @@ function revStr(str) {
 }
 
 function globalAlignment(v, w, delta) {
+  console.log('globalAlignment: v: ', v, ", w: ", w);
   const getWeightsResult = getWeights(v, w, delta);
   var rights = getWeightsResult[0];
   var downs = getWeightsResult[1];
@@ -122,12 +123,21 @@ function globalAlignment(v, w, delta) {
     if (string1[i] === string2[i]) {
       alignment += "|";
     } else {
-      alignment += " ";
+      alignment += "=";
     }
   }
+  
+  
+  var alignmentObj = {
+    string1: string1,
+    alignment: alignment,
+    string2: string2,
+  };
+  
   alignment = string1 + "\n" + alignment + "\n" + string2;
-  //console.log('global alignment result: ', [table, pointers, alignment]);
-  return [table, pointers, alignment];
+  console.log(alignmentObj);
+  console.log(alignment);
+  return [table, pointers, alignment, alignmentObj];
 }
 
 function prefixSuffix(v, w, delta) {
@@ -271,21 +281,28 @@ function prefixSuffix(v, w, delta) {
   return [report, split];
 }
 
-function merge(alignment1, alignment2) {
-  var length = alignment1.indexOf("\n");
-  var a = alignment1.substring(0, length) + alignment2.substring(0, length);
-  var b =
-    alignment1.substring(length * 2 + 2, alignment1.length) +
-    alignment2.substring(length * 2 + 2, alignment2.length);
+function merge(alignment1Obj, alignment2Obj) {
+  console.log('merge, alignment1Obj: ', alignment1Obj, ', alignment2Obj: ', alignment2Obj);
+  var a = alignment1Obj.string1 + alignment2Obj.string1;
+  var b = alignment1Obj.string2 + alignment2Obj.string2;
   var middle = "";
-  for (var i = 0; i < a.length; i++) {
-    if (a[i] === b[i]) {
+  for (var i = 0; i < Math.max(a.length, b.length); i++) {
+    if (i < a.length && i < b.length && a[i] === b[i]) {
       middle += "|";
     } else {
-      middle += " ";
+      middle += "=";
     }
   }
-  return a + "\n" + middle + "\n" + b;
+  const r = a + "\n" + middle + "\n" + b;
+  
+  const resultObj = {
+    string1: a, 
+    alignment: middle,
+    string2: b,
+  }
+
+  console.log('merge r: ', r, ', resultObj: ', resultObj);
+  return [r, resultObj];
 }
 
 function hirschberg(short, long, delta, indent_i, indent_j, level) {
@@ -334,13 +351,16 @@ function hirschberg(short, long, delta, indent_i, indent_j, level) {
       level + 1
     );
     node["children"] = [a[1], b[1]];
-    var m = merge(a[0], b[0]);
-    console.log('m: ', m, ', node: ', node);
-    return [m, node];
+    //var m = merge(a[0], b[0]);
+    //console.log('m: ', m, ', node: ', node);
+    var m = merge(a[2], b[2]);
+    return [m[0], node, m[1]];
   } else {
-    const temp = globalAlignment(short, long, delta)[2];
-    console.log('temp : ', temp, ', node: ', node);
-    return [temp, node];
+    const globalAlignmentResult = globalAlignment(short, long, delta);
+    const temp = globalAlignmentResult[2];
+    //console.log('temp : ', temp, ', node: ', node);
+    const alignmentObj = globalAlignmentResult[3];
+    return [temp, node, alignmentObj];
   }
 }
 
@@ -364,6 +384,7 @@ function h(short, long, match, mismatch, gap) {
 
   var h = hirschberg(short, long, delta, 0, 0, 0);
   console.log("h:", h);
+  
   // console.log("d_final: ", d);
   return h;
 }
