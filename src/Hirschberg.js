@@ -21,15 +21,15 @@ function getWeights(v, w, delta) {
   }
   for (var i = 0; i < v.length + 1; i++) {
     for (var j = 1; j < w.length + 1; j++) {
-      console.log("delta, w[j-1]: ", delta, w[j - 1]);
+      //console.log("delta, w[j-1]: ", delta, w[j - 1]);
       rights[i][j] = delta["-"][w[j - 1]];
     }
   }
   for (var i = 1; i < v.length + 1; i++) {
     for (var j = 0; j < w.length + 1; j++) {
-      console.log("delta 26: ", delta);
-      console.log(v[i - 1]);
-      console.log("v: ", v);
+      //console.log("delta 26: ", delta);
+      //console.log(v[i - 1]);
+      //console.log("v: ", v);
       downs[i][j] = delta[v[i - 1]]["-"];
     }
   }
@@ -53,7 +53,7 @@ function globalAlignment(v, w, delta) {
   var rights = getWeightsResult[0];
   var downs = getWeightsResult[1];
   var downrights = getWeightsResult[2];
-  console.log("rights, downs, dr: ", rights, downs, downrights);
+  //console.log("rights, downs, dr: ", rights, downs, downrights);
   var table = [];
   var pointers = [];
   for (var i = 0; i < v.length + 1; i++) {
@@ -72,7 +72,7 @@ function globalAlignment(v, w, delta) {
         table[i][j] = table[i - 1][j] + downs[i][j];
         pointers[i][j] = UP;
       } else if (i === 0 && j > 0) {
-        console.log("i, j, table, rights: ", i, j, table, rights);
+        //console.log("i, j, table, rights: ", i, j, table, rights);
         table[i][j] = table[i][j - 1] + rights[i][j];
         pointers[i][j] = LEFT;
       } else {
@@ -126,6 +126,7 @@ function globalAlignment(v, w, delta) {
     }
   }
   alignment = string1 + "\n" + alignment + "\n" + string2;
+  //console.log('global alignment result: ', [table, pointers, alignment]);
   return [table, pointers, alignment];
 }
 
@@ -259,7 +260,7 @@ function prefixSuffix(v, w, delta) {
 
   var report = 0;
   var maxVal = sumList[0];
-  console.log("sumList: ", sumList);
+  //console.log("sumList: ", sumList);
 
   for (var i = 0; i < v.length + 1; i++) {
     if (sumList[i] > maxVal) {
@@ -288,17 +289,17 @@ function merge(alignment1, alignment2) {
 }
 
 function hirschberg(short, long, delta, indent_i, indent_j, level) {
-  console.log("d: ", d, ", level: ", level);
+  //console.log("d: ", d, ", level: ", level);
   var node = {
     name: "(" + short + " / " + long + ")",
     attributes: {
       prefix_i: indent_i,
       suffix_j: indent_j,
       i: short.length + indent_i,
-      j: short.length + indent_j
+      j: long.length + indent_j
     }
   };
-  console.log("node: ", node);
+  //console.log("node: ", node);
 
   // if (!(level in d)) {
   //   d[level] = [];
@@ -333,9 +334,13 @@ function hirschberg(short, long, delta, indent_i, indent_j, level) {
       level + 1
     );
     node["children"] = [a[1], b[1]];
-    return [merge(a[0], b[0]), node];
+    var m = merge(a[0], b[0]);
+    console.log('m: ', m, ', node: ', node);
+    return [m, node];
   } else {
-    return [globalAlignment(short, long, delta)[2], node];
+    const temp = globalAlignment(short, long, delta)[2];
+    console.log('temp : ', temp, ', node: ', node);
+    return [temp, node];
   }
 }
 
@@ -355,7 +360,7 @@ function h(short, long, match, mismatch, gap) {
       }
     }
   }
-  console.log("delta: ", delta);
+  //console.log("delta: ", delta);
 
   var h = hirschberg(short, long, delta, 0, 0, 0);
   console.log("h:", h);
