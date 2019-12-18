@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Hirschberg-tree-visualizer/static/css/main.f623a457.chunk.css",
-    "main.js": "/Hirschberg-tree-visualizer/static/js/main.d63738b9.chunk.js",
-    "main.js.map": "/Hirschberg-tree-visualizer/static/js/main.d63738b9.chunk.js.map",
+    "main.css": "/Hirschberg-tree-visualizer/static/css/main.766f6454.chunk.css",
+    "main.js": "/Hirschberg-tree-visualizer/static/js/main.3439a33e.chunk.js",
+    "main.js.map": "/Hirschberg-tree-visualizer/static/js/main.3439a33e.chunk.js.map",
     "runtime-main.js": "/Hirschberg-tree-visualizer/static/js/runtime-main.5adaa362.js",
     "runtime-main.js.map": "/Hirschberg-tree-visualizer/static/js/runtime-main.5adaa362.js.map",
     "static/css/2.86aa6515.chunk.css": "/Hirschberg-tree-visualizer/static/css/2.86aa6515.chunk.css",
     "static/js/2.45acbb2d.chunk.js": "/Hirschberg-tree-visualizer/static/js/2.45acbb2d.chunk.js",
     "static/js/2.45acbb2d.chunk.js.map": "/Hirschberg-tree-visualizer/static/js/2.45acbb2d.chunk.js.map",
     "index.html": "/Hirschberg-tree-visualizer/index.html",
-    "precache-manifest.b8f5c41e0cc40ede78a7be1434d02250.js": "/Hirschberg-tree-visualizer/precache-manifest.b8f5c41e0cc40ede78a7be1434d02250.js",
+    "precache-manifest.97483276fe07637a87188c61387993c3.js": "/Hirschberg-tree-visualizer/precache-manifest.97483276fe07637a87188c61387993c3.js",
     "service-worker.js": "/Hirschberg-tree-visualizer/service-worker.js",
     "static/css/2.86aa6515.chunk.css.map": "/Hirschberg-tree-visualizer/static/css/2.86aa6515.chunk.css.map",
-    "static/css/main.f623a457.chunk.css.map": "/Hirschberg-tree-visualizer/static/css/main.f623a457.chunk.css.map"
+    "static/css/main.766f6454.chunk.css.map": "/Hirschberg-tree-visualizer/static/css/main.766f6454.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.5adaa362.js",
     "static/css/2.86aa6515.chunk.css",
     "static/js/2.45acbb2d.chunk.js",
-    "static/css/main.f623a457.chunk.css",
-    "static/js/main.d63738b9.chunk.js"
+    "static/css/main.766f6454.chunk.css",
+    "static/js/main.3439a33e.chunk.js"
   ]
 }
