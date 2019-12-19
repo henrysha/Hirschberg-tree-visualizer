@@ -7,8 +7,8 @@ class InputForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sequence1: "",
-      sequence2: "",
+      sequence1: "GC",
+      sequence2: "GCAT",
       matchScore: 1,
       mismatchScore: -1,
       gapScore: -1
@@ -49,7 +49,11 @@ class InputForm extends Component {
               Sequence 1
             </Form.Label>
             <Col sm={9}>
-              <Form.Control size="sm" onChange={this.handleChange} />
+              <Form.Control
+                size="sm"
+                value={this.state.sequence1}
+                onChange={this.handleChange}
+              />
             </Col>
           </Form.Group>
           <Form.Group as={Row} controlId="sequence2">
@@ -57,7 +61,11 @@ class InputForm extends Component {
               Sequence 2
             </Form.Label>
             <Col sm={9}>
-              <Form.Control size="sm" onChange={this.handleChange} />
+              <Form.Control
+                size="sm"
+                value={this.state.sequence2}
+                onChange={this.handleChange}
+              />
             </Col>
           </Form.Group>
           <Form.Group as={Row} controlId="matchScore">
