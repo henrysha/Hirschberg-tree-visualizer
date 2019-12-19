@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "458ebbcba4d4c8c04b60ddfec815134e",
+    "revision": "5835093cb896a9b1b221456c7161782d",
     "url": "/Hirschberg-tree-visualizer/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Hirschberg-tree-visualizer/static/css/2.86aa6515.chunk.css"
   },
   {
-    "revision": "8643716b11a31146f043",
+    "revision": "830128acfb712abfd49f",
     "url": "/Hirschberg-tree-visualizer/static/css/main.766f6454.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Hirschberg-tree-visualizer/static/js/2.45acbb2d.chunk.js"
   },
   {
-    "revision": "8643716b11a31146f043",
-    "url": "/Hirschberg-tree-visualizer/static/js/main.194dee30.chunk.js"
+    "revision": "830128acfb712abfd49f",
+    "url": "/Hirschberg-tree-visualizer/static/js/main.83178a77.chunk.js"
   },
   {
     "revision": "119451fc4e6c937ce181",
