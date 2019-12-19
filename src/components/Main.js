@@ -10,13 +10,13 @@ class Main extends Component {
     this.state = {
       sequence1: "",
       sequence2: "",
-      matchScore: 0,
-      mismatchScore: 0,
-      gapScore: 0,
+      matchScore: 1,
+      mismatchScore: -1,
+      gapScore: -1,
       displayResult: false,
       treeData: {},
       alignment: "",
-      alignmentObj: {},
+      alignmentObj: {}
     };
     this.submitInput = this.submitInput.bind(this);
   }
@@ -32,13 +32,19 @@ class Main extends Component {
       long = inputObj.sequence1;
     }
 
-    var hResult = h(short, long, inputObj.matchScore, inputObj.mismatchScore, inputObj.gapScore);
+    var hResult = h(
+      short,
+      long,
+      inputObj.matchScore,
+      inputObj.mismatchScore,
+      inputObj.gapScore
+    );
     //this.setState(inputObj);
     this.setState({
       displayResult: true,
       treeData: hResult[1],
       alignment: hResult[0],
-      alignmentObj: hResult[2],
+      alignmentObj: hResult[2]
     });
   }
 
@@ -57,8 +63,8 @@ class Main extends Component {
       const middle = alignmentObj.alignment;
       var new_middle = "";
       for (var i = 0; i < middle.length; i++) {
-        if (middle[i] === '=') {
-          new_middle += '\xa0';
+        if (middle[i] === "=") {
+          new_middle += "\xa0";
         } else {
           new_middle += middle[i];
         }
